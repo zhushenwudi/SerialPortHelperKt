@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">SerialPortHelper</string>
+    <string name="serial1_start_once">串口1 启动一次</string>
+    <string name="serial1_start_many_times">串口1 启动多次</string>
+    <string name="serial1_tie_hint">请输入串口1重复发送命令的次数</string>
+    <string name="serial2_start_once">串口2 启动一次</string>
+    <string name="serial2_start_many_times">串口2 启动多次</string>
+    <string name="serial2_tie_hint">请输入串口2重复发送命令的次数</string>
+</resources>

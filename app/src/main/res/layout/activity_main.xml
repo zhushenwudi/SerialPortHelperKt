@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til1"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_marginHorizontal="40dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnStart1Once"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/tie1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/transparent"
+            android:digits="0123456789"
+            android:hint="@string/serial1_tie_hint"
+            android:imeOptions="actionDone"
+            android:inputType="number"
+            android:textColor="@color/teal_200" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/btnStart1Once"
+        android:layout_width="150dp"
+        android:layout_height="70dp"
+        android:text="@string/serial1_start_once"
+        app:layout_constraintBottom_toTopOf="@+id/til2"
+        app:layout_constraintEnd_toStartOf="@+id/btnStart1ManyTimes"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/til1" />
+
+    <Button
+        android:id="@+id/btnStart1ManyTimes"
+        android:layout_width="150dp"
+        android:layout_height="70dp"
+        android:text="@string/serial1_start_many_times"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btnStart1Once"
+        app:layout_constraintTop_toTopOf="@+id/btnStart1Once" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til2"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_marginHorizontal="40dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnStart2Once"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnStart1Once">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/tie2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/transparent"
+            android:digits="0123456789"
+            android:hint="@string/serial2_tie_hint"
+            android:imeOptions="actionDone"
+            android:inputType="number"
+            android:textColor="@color/teal_200" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/btnStart2Once"
+        android:layout_width="150dp"
+        android:layout_height="70dp"
+        android:text="@string/serial2_start_once"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btnStart1ManyTimes"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/til2" />
+
+    <Button
+        android:id="@+id/btnStart2ManyTimes"
+        android:layout_width="150dp"
+        android:layout_height="70dp"
+        android:text="@string/serial2_start_many_times"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btnStart2Once"
+        app:layout_constraintTop_toTopOf="@+id/btnStart2Once" />
+</androidx.constraintlayout.widget.ConstraintLayout>
