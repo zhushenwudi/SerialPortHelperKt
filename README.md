@@ -112,4 +112,6 @@ unbindService(serial1Connection)
 
 5.Log截图
 
+https://gitee.com/zhushenwudi/serial-port-helper-kt/raw/master/example.png
+
 ![Image text](https://gitee.com/zhushenwudi/serial-port-helper-kt/raw/master/example.png)
