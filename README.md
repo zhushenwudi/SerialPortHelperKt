@@ -3,15 +3,17 @@
 时隔两年，基于Kotlin语言的Android串口通信实例如期而至
 
 #### 项目说明
-1.本程序基于不支持创建多实例的原项目 https://github.com/freyskill/SerialPortHelper 根据issue #2中源码修改的 dearchun大神 所提供的lib包制作
-
-2.由于原SerialPortHelper Java程序在数据量巨大时存在anr情况，并且没有通信超时机制、数据控流等串口通信开发所必要的很多情况，在Kotlin语言以及由谷歌带来的Jetpack架构的强力支持下，根据项目需要，制作了一款具备自动感知生命周期、适合单一Activity多个Fragment路由情景的串口库。
-
+1.本程序基于不支持创建多实例的原项目 https://github.com/freyskill/SerialPortHelper 根据issue #2中源码修改的 dearchun大神 所提供的lib包制作。  
+2.由于原SerialPortHelper Java程序在数据量巨大时存在anr情况，并且没有通信超时机制、数据控流等串口通信开发所必要的很多情况，在Kotlin语言以及由谷歌带来的Jetpack架构的强力支持下，根据项目需要，制作了一款具备自动感知生命周期、适合单一Activity多个Fragment路由情景的串口库。  
 3.本程序模拟了单次通信，以及自定义次数通信。使用Service方式实现数据交互，通过bindService方式将Activity与Service绑定，且支持自动感知生命周期等操作，对开发人员带来了极大的遍历，真正做到专注于业务逻辑的编写！！
 
 #### 接入方式
-1.下载ZIP
+1.下载ZIP 或通过  
+github:  
 git clone https://github.com/zhushenwudi/SerialPortHelperKt.git
+
+gitee:  
+git clone https://gitee.com/zhushenwudi/serial-port-helper-kt.git
 
 2.依赖moudule包名：serialportlib
 
@@ -110,8 +112,9 @@ serial1Service.startManyTimes(num)
 unbindService(serial1Connection)
 ```
 
-5.Log截图
-
-https://gitee.com/zhushenwudi/serial-port-helper-kt/raw/master/example.png
+5.Log截图  
+https://gitee.com/zhushenwudi/serial-port-helper-kt/raw/master/example.png  
+or  
+https://raw.githubusercontent.com/zhushenwudi/SerialPortHelperKt/master/example.png
 
 ![Image text](https://gitee.com/zhushenwudi/serial-port-helper-kt/raw/master/example.png)
