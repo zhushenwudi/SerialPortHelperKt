@@ -3,6 +3,7 @@ package com.ilab.serialporthelper
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.ilab.serialporthelper.ext.clickNoRepeat
 import com.ilab.serialporthelper.serialport.Serial1Connection
@@ -26,6 +27,7 @@ class MainActivity : AppCompatActivity() {
 
         btnStart1Once.clickNoRepeat {
             if (this::serial1Service.isInitialized) {
+                Log.i(TAG, "串口1发送一次")
                 serial1Service.startOnce()
             }
         }
@@ -34,8 +36,11 @@ class MainActivity : AppCompatActivity() {
             if (this::serial1Service.isInitialized) {
                 tie1.text?.let { text ->
                     try {
-                        serial1Service.startManyTimes(text.toString().trim().toInt())
+                        val num = text.toString().trim().toInt()
+                        Log.i(TAG, "串口1发送${num}次")
+                        serial1Service.startManyTimes(num)
                     } catch (e: Exception) {
+                        Log.i(TAG, "串口1发送5次")
                         serial1Service.startManyTimes()
                     }
                 }
@@ -44,6 +49,7 @@ class MainActivity : AppCompatActivity() {
 
         btnStart2Once.clickNoRepeat {
             if (this::serial2Service.isInitialized) {
+                Log.i(TAG, "串口2发送一次")
                 serial2Service.startOnce()
             }
         }
@@ -52,8 +58,11 @@ class MainActivity : AppCompatActivity() {
             if (this::serial2Service.isInitialized) {
                 tie2.text?.let { text ->
                     try {
-                        serial2Service.startManyTimes(text.toString().trim().toInt())
+                        val num = text.toString().trim().toInt()
+                        Log.i(TAG, "串口2发送${num}次")
+                        serial2Service.startManyTimes(num)
                     } catch (e: Exception) {
+                        Log.i(TAG, "串口2发送5次")
                         serial2Service.startManyTimes()
                     }
                 }
@@ -108,5 +117,9 @@ class MainActivity : AppCompatActivity() {
             e.printStackTrace()
         }
         super.onStop()
+    }
+
+    companion object {
+        private const val TAG = "SerialPortHelperKt"
     }
 }

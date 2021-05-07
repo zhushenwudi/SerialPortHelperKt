@@ -35,7 +35,7 @@ class Serial1Connection(
     }
 
     companion object {
-        val TAG: String = Serial1Connection::class.java.simpleName
+        const val TAG: String = "SerialPortHelperKt"
         const val CONNECTED = "onSerial1Connected"
         const val DISCONNECTED = "onSerial1Disconnected"
     }

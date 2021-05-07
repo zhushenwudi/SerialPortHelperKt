@@ -57,7 +57,7 @@ class Serial1Service : LifecycleService() {
             getScope = CoroutineScope(Dispatchers.IO)
             getScope.launch {
                 val result = encodeHexString(it)
-                Log.e(TAG, "result: $result")
+                Log.e(TAG, "串口结果: $result")
 
                 // 校验CRC16
 //                CRC16.checkCRC(result)
@@ -102,7 +102,7 @@ class Serial1Service : LifecycleService() {
      * 发送多次
      * @param times 循环次数
      */
-    fun startManyTimes(times: Int = 10) {
+    fun startManyTimes(times: Int = 5) {
         var number = times
         // 开始前先停止，总有人忘了释放资源
         stop()
@@ -191,7 +191,7 @@ class Serial1Service : LifecycleService() {
     }
 
     companion object {
-        val TAG: String = Serial1Service::class.java.simpleName
+        val TAG: String = "SerialPortHelperKt"
         const val SERIAL_CANT_OPEN = "SERIAL1_CANT_OPEN"
         const val START_LOG = "serial1 start"
         const val STOP_LOG = "serial1 stop"

@@ -56,9 +56,9 @@ class Serial2Service : LifecycleService() {
             getScope = CoroutineScope(Dispatchers.IO)
             getScope.launch {
                 val rawData = Arrays.toString(it)
-                Log.d(TAG, "raw data: $rawData")
+                Log.d(TAG, "原始串口结果: $rawData")
                 val result = parseData(rawData)
-                Log.e(TAG, "convert result: $result")
+                Log.e(TAG, "转换串口结果: $result")
                 if (mutex.isLocked) {
                     mutex.unlock()
                 }
@@ -100,7 +100,7 @@ class Serial2Service : LifecycleService() {
      * 发送多次
      * @param times 循环次数
      */
-    fun startManyTimes(times: Int = 10) {
+    fun startManyTimes(times: Int = 5) {
         var number = times
         // 开始前先停止，总有人忘了释放资源
         stop()
@@ -198,7 +198,7 @@ class Serial2Service : LifecycleService() {
     }
 
     companion object {
-        val TAG: String = Serial2Service::class.java.simpleName
+        const val TAG: String = "SerialPortHelperKt"
         const val SERIAL_CANT_OPEN = "SERIAL2_CANT_OPEN"
         const val START_LOG = "serial2 start"
         const val STOP_LOG = "serial2 stop"
