@@ -1,6 +1,8 @@
 # SerialPortHelperKt
 
-时隔两年，基于Kotlin语言的Android串口通信实例如期而至
+## 推荐由Kotlin重构的新串口通信库：https://github.com/zhushenwudi/serialport
+
+<!--时隔两年，基于Kotlin语言的Android串口通信实例如期而至
 
 #### 项目说明
 1.本程序基于不支持创建多实例的原项目 https://github.com/freyskill/SerialPortHelper 根据issue #2中源码修改的 dearchun大神 所提供的lib包制作。  
